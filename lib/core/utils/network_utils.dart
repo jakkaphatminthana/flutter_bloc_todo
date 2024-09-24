@@ -39,6 +39,13 @@ class NetworkUtils {
   }) async =>
       await _remoteRequest(path, 'PUT', data, null);
 
+  ///PATCH
+  Future<dynamic> patch({
+    required String path,
+    Map<String, dynamic>? data,
+  }) async =>
+      await _remoteRequest(path, 'PATCH', data, null);
+
   ///DELETE
   Future<dynamic> delete({
     required String path,

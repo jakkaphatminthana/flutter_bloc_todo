@@ -12,8 +12,6 @@ class RawToEntityTodoMapper {
   }
 
   List<TodoModel> apply(List<dynamic> raws) {
-    log("raws = $raws");
-
     final List<TodoModel> result = [];
     for (final raw in raws) {
       result.add(

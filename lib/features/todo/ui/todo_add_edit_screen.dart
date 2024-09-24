@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_todo/core/common_widget/app_button.dart';
 import 'package:flutter_bloc_todo/core/common_widget/custom_reactive_textfield.dart';
-import 'package:flutter_bloc_todo/features/todo/blocs/todo_cubit.dart';
+import 'package:flutter_bloc_todo/core/blocs/todo/todo_cubit.dart';
 import 'package:flutter_bloc_todo/features/todo/data/models/todo_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:reactive_forms/reactive_forms.dart';
@@ -40,6 +40,7 @@ class _TodoAddEditScreenState extends State<TodoAddEditScreen> {
         description: description,
       );
       _form.reset();
+      Navigator.pop(context);
     }
   }
 

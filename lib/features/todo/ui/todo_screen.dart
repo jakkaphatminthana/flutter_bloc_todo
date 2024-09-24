@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_todo/core/blocs/language/language_cubit.dart';
 import 'package:flutter_bloc_todo/core/constants/localization_constant.dart';
 import 'package:flutter_bloc_todo/core/theme/text_styles.dart';
-import 'package:flutter_bloc_todo/features/todo/blocs/todo_cubit.dart';
+import 'package:flutter_bloc_todo/core/blocs/todo/todo_cubit.dart';
 import 'package:flutter_bloc_todo/features/todo/ui/todo_add_edit_screen.dart';
 import 'package:flutter_bloc_todo/features/todo/ui/widget/todo_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
