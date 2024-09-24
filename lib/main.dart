@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_todo/core/blocs/language/language_cubit.dart';
 import 'package:flutter_bloc_todo/core/constants/localization_constant.dart';
 import 'package:flutter_bloc_todo/core/injection/injection.dart';
-import 'package:flutter_bloc_todo/features/todo/blocs/todo_cubit.dart';
+import 'package:flutter_bloc_todo/core/blocs/todo/todo_cubit.dart';
 import 'package:flutter_bloc_todo/features/todo/ui/todo_screen.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
