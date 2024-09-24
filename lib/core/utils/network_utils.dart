@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_todo/core/constants/provider_constant.dart';
@@ -13,36 +15,39 @@ class NetworkUtils {
     return NetworkUtils._(dio);
   }
 
+  //TODO : type usuasl response => Map<String, dynamic>
+  //but i use dynamic because jsonserver not support when add data
+
   ///GET
-  Future<Map<String, dynamic>> get({
+  Future<dynamic> get({
     required String path,
     Map<String, dynamic>? queryParams,
   }) async =>
       await _remoteRequest(path, 'GET', null, queryParams);
 
   ///POST
-  Future<Map<String, dynamic>> post({
+  Future<dynamic> post({
     required String path,
     Map<String, dynamic>? data,
   }) async =>
       await _remoteRequest(path, 'POST', data, null);
 
   ///PUT
-  Future<Map<String, dynamic>> put({
+  Future<dynamic> put({
     required String path,
     Map<String, dynamic>? data,
   }) async =>
       await _remoteRequest(path, 'PUT', data, null);
 
   ///DELETE
-  Future<Map<String, dynamic>> delete({
+  Future<dynamic> delete({
     required String path,
     Map<String, dynamic>? data,
   }) async =>
       await _remoteRequest(path, 'DELETE', data, null);
 
   /// Base remote request
-  Future<Map<String, dynamic>> _remoteRequest<T>(
+  Future<dynamic> _remoteRequest<T>(
     String path,
     String method,
     Map<String, dynamic>? data,
@@ -63,14 +68,14 @@ class NetworkUtils {
         data: data,
         queryParameters: queryParameters,
       );
-      final Map<String, dynamic> result = _mapRemoteResponse(response);
+      final dynamic result = _mapRemoteResponse(response);
       return result;
     } catch (e) {
       rethrow;
     }
   }
 
-  static Map<String, dynamic> _mapRemoteResponse<T>(Response response) {
+  static dynamic _mapRemoteResponse<T>(Response response) {
     final body = response.data;
     if (body == null) {
       throw Exception("No response data");

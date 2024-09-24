@@ -1,3 +1,9 @@
 {
-  "appbar_title": "สวัสดี, Bloc"
+  "appbar_title": "สวัสดี, Bloc",
+  "todo__empty": "ไม่พบรายการบันทึก",
+  "todo__add_appbar_title": "เพิ่มบันทึก",
+  "todo__edit_appbar_title": "แก้ไขบันทึก",
+  "todo__input_title": "หัวข้อ",
+  "todo__input_description": "คำอธิบาย",
+  "todo__error__input_required": "โปรดระบุ"
 }

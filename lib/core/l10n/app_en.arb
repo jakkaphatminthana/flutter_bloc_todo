@@ -1,3 +1,9 @@
 {
-  "appbar_title": "Hello, Bloc"
+  "appbar_title": "Hello, Bloc",
+  "todo__empty": "Data not found",
+  "todo__add_appbar_title": "Add Todo",
+  "todo__edit_appbar_title": "Edit Todo",
+  "todo__input_title": "Title",
+  "todo__input_description": "Description",
+  "todo__error__input_required": "This field is required"
 }

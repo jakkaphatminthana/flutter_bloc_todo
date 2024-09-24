@@ -11,13 +11,8 @@ class RawToEntityTodoMapper {
     return _instance;
   }
 
-  List<TodoModel> apply(Map<String, dynamic> json) {
-    final raws = json['data'];
-
-    if (raws == null) {
-      log("Invalid data for Map response");
-      return [];
-    }
+  List<TodoModel> apply(List<dynamic> raws) {
+    log("raws = $raws");
 
     final List<TodoModel> result = [];
     for (final raw in raws) {
