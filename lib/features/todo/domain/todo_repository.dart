@@ -12,6 +12,10 @@ abstract class ITodoRepository {
     required String title,
     required String description,
   });
+
+  Future<void> requestUpdateTodo({
+    required TodoModel newData,
+  });
 }
 
 class TodoRepository implements ITodoRepository {
@@ -50,5 +54,19 @@ class TodoRepository implements ITodoRepository {
     };
     await _networkUtils.post(path: '/todos', data: params);
     log("called request add todo");
+  }
+
+  @override
+  Future<void> requestUpdateTodo({
+    required TodoModel newData,
+  }) async {
+    final Map<String, dynamic> params = {
+      "title": newData.title,
+      "description": newData.description,
+      "isCompleted": newData.isComplate,
+    };
+
+    await _networkUtils.put(path: '/todos/${newData.id}', data: params);
+    log("called request update todo ${newData.id}");
   }
 }

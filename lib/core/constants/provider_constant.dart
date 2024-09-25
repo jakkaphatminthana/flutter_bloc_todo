@@ -1,3 +1,3 @@
 class ProviderConstant {
-  static const String baseEndpoint = 'https://4283-2403-6200-8956-50a4-1584-e2b6-3ea-a77d.ngrok-free.app/';
+  static const String baseEndpoint = 'https://15ac-2403-6200-8956-abed-1c79-e12a-fada-d7a1.ngrok-free.app/';
 }

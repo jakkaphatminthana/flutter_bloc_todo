@@ -5,5 +5,6 @@
   "todo__edit_appbar_title": "Edit Todo",
   "todo__input_title": "Title",
   "todo__input_description": "Description",
+  "todo__checkbox_isCompleted": "Done",
   "todo__error__input_required": "This field is required"
 }

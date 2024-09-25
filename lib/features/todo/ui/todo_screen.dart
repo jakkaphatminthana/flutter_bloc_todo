@@ -6,6 +6,7 @@ import 'package:flutter_bloc_todo/core/blocs/language/language_cubit.dart';
 import 'package:flutter_bloc_todo/core/constants/localization_constant.dart';
 import 'package:flutter_bloc_todo/core/theme/text_styles.dart';
 import 'package:flutter_bloc_todo/core/blocs/todo/todo_cubit.dart';
+import 'package:flutter_bloc_todo/features/todo/data/models/todo_model.dart';
 import 'package:flutter_bloc_todo/features/todo/ui/todo_add_edit_screen.dart';
 import 'package:flutter_bloc_todo/features/todo/ui/widget/todo_card.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -46,6 +47,17 @@ class _TodoScreenState extends State<TodoScreen> {
       context,
       MaterialPageRoute(
         builder: (context) => const TodoAddEditScreen(),
+      ),
+    );
+  }
+
+  void _handleEditTodo(TodoModel item) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => TodoAddEditScreen(
+          initialData: item,
+        ),
       ),
     );
   }
@@ -92,7 +104,10 @@ class _TodoScreenState extends State<TodoScreen> {
                 itemCount: state.todoList.length,
                 itemBuilder: (context, index) {
                   final item = state.todoList[index];
-                  return TodoCard(data: item);
+                  return TodoCard(
+                    data: item,
+                    handleItem: (item) => _handleEditTodo(item),
+                  );
                 },
               );
             },

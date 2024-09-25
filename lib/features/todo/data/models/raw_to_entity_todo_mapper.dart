@@ -19,11 +19,10 @@ class RawToEntityTodoMapper {
           id: raw['id'] ?? '',
           title: raw['title'] ?? '',
           description: raw['description'] ?? '',
-          isComplate: raw['isComplated'] ?? false,
+          isComplate: raw['isCompleted'] ?? false,
         ),
       );
     }
-
     return result;
   }
 }

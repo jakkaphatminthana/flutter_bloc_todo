@@ -46,4 +46,19 @@ class TodoCubit extends Cubit<TodoState> {
       await EasyLoading.dismiss();
     }
   }
+
+  Future<void> updateTodo({
+    required TodoModel newData,
+  }) async {
+    try {
+      await EasyLoading.show();
+      await Future.delayed(const Duration(milliseconds: 1500));
+      await _todoRepository.requestUpdateTodo(newData: newData);
+      await fetchTodoList();
+    } catch (e) {
+      log("💥 Catch Error| updateTodo: $e");
+    } finally {
+      await EasyLoading.dismiss();
+    }
+  }
 }
