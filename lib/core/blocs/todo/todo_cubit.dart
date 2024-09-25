@@ -61,4 +61,20 @@ class TodoCubit extends Cubit<TodoState> {
       await EasyLoading.dismiss();
     }
   }
+
+  Future<void> deleteTodo({
+    required String id,
+  }) async {
+    try {
+      await EasyLoading.show();
+      await Future.delayed(const Duration(milliseconds: 1500));
+      await _todoRepository.requestDeleteTodo(id: id);
+      await fetchTodoList();
+    } catch (e) {
+      log("💥 Catch Error| deleteTodo: $e");
+      throw Exception("Catch Error| deleteTodo: $e");
+    } finally {
+      await EasyLoading.dismiss();
+    }
+  }
 }

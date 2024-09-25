@@ -62,6 +62,24 @@ class _TodoScreenState extends State<TodoScreen> {
     );
   }
 
+  Future<bool> _handleDeleteTodo(String id) async {
+    try {
+      await BlocProvider.of<TodoCubit>(context).deleteTodo(id: id);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Future<bool> _onDeleteTodo(String id) async {
+  //   try {
+  //     await BlocProvider.of<TodoCubit>(context).deleteTodo(id: id);
+  //     return true;
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     var localization = AppLocalizations.of(context);
@@ -107,6 +125,7 @@ class _TodoScreenState extends State<TodoScreen> {
                   return TodoCard(
                     data: item,
                     handleItem: (item) => _handleEditTodo(item),
+                    handleDelete: (id) => _handleDeleteTodo(id),
                   );
                 },
               );

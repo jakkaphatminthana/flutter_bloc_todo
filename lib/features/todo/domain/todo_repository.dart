@@ -16,6 +16,10 @@ abstract class ITodoRepository {
   Future<void> requestUpdateTodo({
     required TodoModel newData,
   });
+
+  Future<void> requestDeleteTodo({
+    required String id,
+  });
 }
 
 class TodoRepository implements ITodoRepository {
@@ -68,5 +72,13 @@ class TodoRepository implements ITodoRepository {
 
     await _networkUtils.put(path: '/todos/${newData.id}', data: params);
     log("called request update todo ${newData.id}");
+  }
+
+  @override
+  Future<void> requestDeleteTodo({
+    required String id,
+  }) async {
+    await _networkUtils.delete(path: '/todos/$id');
+    log("called request delete todo $id");
   }
 }
